@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Java Data Types Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      color: #ddd;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td:first-child {
+      font-weight: bold;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+      border: 2px solid #444;
+      position: relative;
+    }
+
+    th {
+      text-align: center !important;
+    }
+
+    pre {
+      margin: 0;
+      margin-top: 20px;
+      background-color: #1e1e1e;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    code {
+      font-family: monospace;
+      background-color: #1e1e1e;
+      color: #f8f8f2;
+    }
+
+    /* Dark mode syntax highlighting */
+    .copy-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      background-color: #444;
+      color: #ddd;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .copy-btn:hover {
+      background-color: #555;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+    function copyToClipboard(elementId) {
+      const codeText = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(codeText).then(() => {
+        console.log('Code copied to clipboard!');
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th></th>
+      <th>String Example</th>
+      <th>Array Example</th>
+      <th>ArrayList Example</th>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>
+        String: a sequence of characters used to represent text.
+      </td>
+      <td>
+        Array: a fixed-size data structure that holds a collection of elements of the same type contiguously in
+        memory.
+      </td>
+      <td>
+        ArrayList: a resizable data structure defined as a Class that holds a collection of elements and allows
+        for dynamic addition and removal of elements.
+      </td>
+    </tr>
+    <tr>
+      <td>What is this type used for?</td>
+      <td>
+        String: Used for storing and manipulating sequences of characters, such as text, names, or messages. It
+        provides various methods for operations like searching, replacing, and formatting text.
+      </td>
+      <td>
+        Array: Used for storing a fixed-size collection of elements of the same type, allowing for efficient
+        access and modification of elements using an index. Arrays are ideal when the number of elements is
+        known and fixed at compile time.
+      </td>
+      <td>
+        ArrayList: Used for storing a dynamic collection of elements that can grow or shrink in size. It
+        provides flexibility with operations such as adding, removing, and accessing elements, making it useful
+        when the number of elements is not known in advance or changes frequently.
+      </td>
+    </tr>
+    <tr>
+      <td>How do you declare a variable of this type with the default initial value?</td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code7')">📋</button>
+        <pre><code id="code7" class="java">String str;</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code8')">📋</button>
+        <pre><code id="code8" class="java">boolean[] arr = new boolean[5];</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code9')">📋</button>
+        <pre><code id="code9" class="java">ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>How do you declare a variable of this type with the default initial value?</td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code10')">📋</button>
+        <pre><code id="code10" class="java">String str = "hello world";</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code11')">📋</button>
+        <pre><code id="code11" class="java">int[] arr = {0, 1, 2, 3, 4, 5};</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code12')">📋</button>
+        <pre><code id="code12" class="java">ArrayList&lt;Double&gt; list = new ArrayList&lt;Double&gt;(
+  Arrays.asList(3.4, 4.2, 9.4, 1.8, 1.9));</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>How do you access one element of this type?</td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code13')">📋</button>
+        <pre><code id="code13" class="java">str.substring(2, 3)  // option 1
+str.charAt(2)  // option 2</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code14')">📋</button>
+        <pre><code id="code14" class="java">arr[1]</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code15')">📋</button>
+        <pre><code id="code15" class="java">list.get(4)</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>How do you modify one element of this type?</td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code16')">📋</button>
+        <pre><code id="code16" class="java">str = str.substring(0, 6) + "W" + str.substring(7);</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code17')">📋</button>
+        <pre><code id="code17" class="java">arr[1] = 9;</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code18')">📋</button>
+        <pre><code id="code18" class="java">list.set(2, 3.7);</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>How do you retrieve the total number of elements of this type?</td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code19')">📋</button>
+        <pre><code id="code19" class="java">str.length()</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code20')">📋</button>
+        <pre><code id="code20" class="java">arr.length</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code21')">📋</button>
+        <pre><code id="code21" class="java">list.size()</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>How do you loop through each element of this type using a for loop and print each element?</td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code22')">📋</button>
+        <pre><code id="code22" class="java">for (int i = 0; i &lt; str.length(); i++) {
+  System.out.println(str.charAt(i)); // option 1
+  System.out.println(str.substring(i, i+1)); // option 2
+}</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code23')">📋</button>
+        <pre><code id="code23" class="java">for (int i = 0; i &lt; arr.length; i++) {
+  System.out.println(arr[i]);
+}</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code24')">📋</button>
+        <pre><code id="code24" class="java">for (int i = 0; i &lt; list.size(); i++) {
+  System.out.println(list.get(i));
+}</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>How do you loop through each element of this type using a for loop and modify each element to be a new
+        value?</td>
+      <td>
+        Ignore. Wouldn't really ever do this.
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code26')">📋</button>
+        <pre><code id="code26" class="java">for (int i = 0; i &lt; arr.length; i++) {
+  arr[i] = arr[i] * arr[i];
+}</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code27')">📋</button>
+        <pre><code id="code27" class="java">for (int i = 0; i &lt; list.size(); i++) {
+  list.set(i, list.get(i) * list.get(i));
+}</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>How do you loop through each element of this type using an enhanced for-each loop and print each
+        element?
+      </td>
+      <td>
+        <p>Not possible with just a String, but here's how you'd do it if you're interested.</p>
+        <button class="copy-btn" onclick="copyToClipboard('code28')">📋</button>
+        <pre><code id="code28" class="java">for (char c : str.toCharArray()) {
+  System.out.println(c);
+}</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code29')">📋</button>
+        <pre><code id="code29" class="java">for (int n : arr) {
+  System.out.println(n);
+}</code></pre>
+      </td>
+      <td>
+        <button class="copy-btn" onclick="copyToClipboard('code30')">📋</button>
+        <pre><code id="code30" class="java">for (double val : list) {
+  System.out.println(val);
+}</code></pre>
+      </td>
+    </tr>
+    <tr>
+      <td>Why would you use a traditional for loop over an enhanced for-each loop? Describe a scenario for each.
+      </td>
+      <td colspan="3">While the enhanced for-each loop is often more concise and readable, there are situations
+        where a traditional for loop might be preferable. <strong>Traditional For Loop:</strong> If you want to
+        modify the elements of the collection while iterating, you need to use a traditional for loop to have
+        access to the index. <strong>Enhanced For-Each Loop:</strong> If you're only reading the values of the
+        elements and not modifying them, the enhanced for-each loop is a good choice.
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
